@@ -1,0 +1,21 @@
+name:		        X11-xcomposite
+version:	        0.1.1
+license:	        BSD3
+license-file:	        LICENSE
+copyright:	        Aren Olson, 2011
+maintainer:	        Aren Olson <reacocard@gmail.com>
+homepage:               <insert github URL>
+category:	        Graphics
+synopsis:	        A binding to the Xcomposite X11 extension library
+description:	        A Haskell binding to the Xcomposite X11 extention graphics library.
+	.
+	The binding is a direct translation of the C binding; for
+	documentation of these calls, refer to man xcomposite(3)
+exposed-modules:
+    Graphics.X11.Xcomposite
+extensions:	        ForeignFunctionInterface, CPP
+extra-libraries:        "Xcomposite"
+build-depends:	        base >= 3 && < 5, X11
+build-type:             Simple
+ghc-options:            -funbox-strict-fields -Wall -fno-warn-unused-binds
+ghc-prof-options:       -prof -auto-all
