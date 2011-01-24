@@ -35,29 +35,29 @@ compositeRedirectManual = 1
 foreign import ccall unsafe "XCompositeRedirectWindow"
     xcompositeRedirectWindow :: Display -> Window -> CompositeRedirectMode -> IO ()
 
-foreign import ccall unsafe "XcompositeRedirectSubwindows"
+foreign import ccall unsafe "XCompositeRedirectSubwindows"
     xcompositeRedirectSubwindows :: Display -> Window -> CompositeRedirectMode -> IO ()
 
-foreign import ccall unsafe "XcompositeUnredirectWindow"
+foreign import ccall unsafe "XCompositeUnredirectWindow"
     xcompositeUnredirectWindow :: Display -> Window -> CompositeRedirectMode -> IO ()
 
-foreign import ccall unsafe "XcompositeUnredirectSubwindows"
+foreign import ccall unsafe "XCompositeUnredirectSubwindows"
     xcompositeUnredirectSubwindows :: Display -> Window -> CompositeRedirectMode -> IO ()
 
 xcompositeCreateRegionFromBorderClip :: Display -> Window -> IO Region
 xcompositeCreateRegionFromBorderClip dpy win = do
     rp <- xxcompositeCreateRegionFromBorderClip dpy win
     makeRegion rp
-foreign import ccall unsafe "XcompositeCreateRegionFromBorderClip"
+foreign import ccall unsafe "XCompositeCreateRegionFromBorderClip"
     xxcompositeCreateRegionFromBorderClip :: Display -> Window -> IO (Ptr Region)
 
-foreign import ccall unsafe "XcompositeNameWindowPixmap"
+foreign import ccall unsafe "XCompositeNameWindowPixmap"
     xcompositeNameWindowPixmap :: Display -> Window -> IO Pixmap
 
-foreign import ccall unsafe "XcompositeGetOverlayWindow"
+foreign import ccall unsafe "XCompositeGetOverlayWindow"
     xcompositeGetOverlayWindow :: Display -> Window -> IO Window
 
-foreign import ccall unsafe "XcompositeReleaseOverlayWindow"
+foreign import ccall unsafe "XCompositeReleaseOverlayWindow"
     xcompositeReleaseOverlayWindow :: Display -> Window -> IO ()
 
 
