@@ -12,7 +12,9 @@ module Graphics.X11.Xcomposite (
     xcompositeCreateRegionFromBorderClip,
     xcompositeNameWindowPixmap,
     xcompositeGetOverlayWindow,
-    xcompositeReleaseOverlayWindow
+    xcompositeReleaseOverlayWindow,
+    xcompositeQueryExtension,
+    xcompositeQueryVersion
     ) where
 
 import Foreign
