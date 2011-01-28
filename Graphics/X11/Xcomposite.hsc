@@ -48,10 +48,10 @@ foreign import ccall unsafe "XCompositeUnredirectSubwindows"
 
 xcompositeCreateRegionFromBorderClip :: Display -> Window -> IO Region
 xcompositeCreateRegionFromBorderClip dpy win = do
-    rp <- xxcompositeCreateRegionFromBorderClip dpy win
+    rp <- cXcompositeCreateRegionFromBorderClip dpy win
     makeRegion rp
 foreign import ccall unsafe "XCompositeCreateRegionFromBorderClip"
-    xxcompositeCreateRegionFromBorderClip :: Display -> Window -> IO (Ptr Region)
+    cXcompositeCreateRegionFromBorderClip :: Display -> Window -> IO (Ptr Region)
 
 foreign import ccall unsafe "XCompositeNameWindowPixmap"
     xcompositeNameWindowPixmap :: Display -> Window -> IO Pixmap
